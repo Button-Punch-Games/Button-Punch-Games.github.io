@@ -1,0 +1,296 @@
+$blue: #0145AC
+$white: #ffffff
+$background: #1a1a1a
+$secondary-background: #080808
+$lighter-background: #272C36
+
+$media-sm: 320px
+$media-md: 720px
+$media-lg: 1024px
+
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform:     $property
+  transform:         $property
+
+
+
+body
+    font-family: 'Righteous'
+    background: $background
+    margin: 0px
+    overflow-x: hidden
+
+img
+    max-width: 100%
+
+
+.container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    padding: 0px
+    margin: auto
+    background: $background
+    @media only screen and (min-width: $media-md)
+        width: 90%
+    @media only screen and (min-width: $media-lg)
+        width: 80%
+
+.section--full-page
+    height: 100vh
+    min-height: 100vh
+    width: 100%
+
+.section--narrow
+    width: 80%
+
+
+.section__header
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    box-sizing: border-box
+    margin: 0
+    padding: 10px 0px
+    font-size: 4em
+    color: $white
+    height: 30%
+    @media only screen and (min-width: $media-md)
+        font-size: 7em
+
+.section__content
+    box-sizing: border-box
+    height: 70%
+
+.main-title
+    padding-left: calc(23vw + 10px - 40px)
+    height: 23vw
+    max-height: 30%
+    display: flex
+    align-items: center
+    box-sizing: border-box
+    margin: 0
+    font-size: calc(12vw)
+    color: $white
+    opacity: 0
+    @media only screen and (min-width: $media-md)
+        font-size: 6.5em
+
+.media-wrapper
+    display: flex
+    max-width: 100%
+    max-height: 100%
+    img, video
+        width: 100%
+        height: 100%
+
+
+
+#description
+    position: relative
+
+.text
+    color: #b4b4b4
+    font-size: 20px
+    text-align: center
+    @media only screen and (min-width: $media-lg)
+        font-size: 30px
+
+.emphasis
+    color: white
+
+.callout
+    text-emphasis: bold
+    font-size: 2em
+
+.callout--white
+    color: $white
+
+
+
+
+
+
+#demos
+    position: relative
+    margin-bottom: 50px
+    width: 100%
+
+// For the divs inside the demos area
+@for $i from 1 through 6
+    #demo-#{$i}
+        position: relative
+        width: 100%
+        height: 90vw
+        max-height: 400px
+        z-index: 10
+        @media only screen and (min-width: $media-md)
+            height: 600px
+            max-height: 600px
+        div:nth-child(1)
+            position: absolute
+            width: 90%
+            top: 50%
+            left: 50%
+            +transform(translate(-50%, -50%))
+            @media only screen and (min-width: $media-md)
+                +transform(translateY(-50%))
+                max-width: 800px
+                left: inherit
+                @if $i % 2 == 0
+                    right: 10px
+                @else
+                    left: 10px
+        div:nth-child(2)
+            position: absolute
+            top: #{random(100) + 5}px
+            @if $i % 2 != 0
+                left: -#{random(80) + 20}px
+            @else
+                right: -#{random(80) + 20}px
+            width: #{random(150) + 400}px
+            max-width: 100%
+            height: #{random(30) + 20}px
+            background: $lighter-background
+            opacity: 0.8
+            z-index: -10
+
+
+#footer
+    position: relative
+    top: 0px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    height: 100px
+    width: 100%
+    margin-top: 100px
+
+
+.slide-up
+    div:nth-child(1)
+        +transform(translateY(10%))
+    div:nth-child(2)
+        +transform(translateY(15%))
+    div
+        animation-name: slide-up
+        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+        animation-fill-mode: forwards
+        animation-duration: 1s
+
+
+.slide-right--delay
+    animation-name: slide-right
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+    animation-fill-mode: forwards
+    animation-duration: 1s
+    animation-delay: 1s
+
+@keyframes slide-up
+    0%
+        opacity: 0
+        +transform(translate(0px, 100px))
+    100%
+        opacity: 1
+
+@keyframes slide-right
+    0%
+        opacity: 0
+        +transform(translateX(-20px))
+    100%
+        opacity: 1
+        +transform(translateX(40px))
+
+
+
+/* General purpose css classes */
+
+.button 
+    position: relative
+    height: 40px
+    width: 100px
+    background: $lighter-background
+    border: solid 2px $secondary-background
+    border-bottom: solid 3px $secondary-background
+    border-right: solid 3px $secondary-background
+    color: white
+    overflow: hidden
+    cursor: pointer
+    transition: 400ms all cubic-bezier(0.075, 0.82, 0.165, 1)
+    &:hover
+        +transform(scale(1.1))
+
+    @media only screen and (min-width: $media-md)
+        width: 130px
+        height: 50px
+    @media only screen and (min-width: $media-lg)
+        width: 180px
+        height: 50px
+
+
+.button .content
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: inherit
+
+.button.expandable
+    .secondary-content
+        position: absolute
+        left: 50px
+        width: 150px
+        opacity: 0
+        transition: inherit
+    &:hover
+        width: 180px
+        .content
+            left: 20px
+        .secondary-content 
+            opacity: 1
+
+
+.social-icon
+    font-size: 32px
+
+.center
+    display: flex
+    justify-content: center
+
+
+.regular-text
+    font-size: 20px
+    color: white
+    margin-bottom: 10px
+    &.bigger
+        font-size: 28px
+
+input[type=text]
+    border-style: solid
+    boder: none
+    box-sizing: border-box
+    height: 40px
+    width: 300px
+    padding: 4px
+    font-size: 24px
+    font: inherit
+    background: #dedede
+    transition: 80ms all cubic-bezier(0.075, 0.82, 0.165, 1)
+    &:focus
+        outline: blue
+        background: white
+
+.space-around
+    margin: 100px 10px 100px 10px
+    
+
+
+.slide-in
+    animation-name: slide-in
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1)
+    animation-fill-mode: forwards
+    animation-duration: 1s 

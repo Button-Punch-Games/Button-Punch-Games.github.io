@@ -1,0 +1,113 @@
+body {
+    --red: #dd0000;
+    --blue: #3000dd;
+    --yellow: #eedd00;
+    --green: #006010;
+}
+
+.spinball-dude {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 10vw;
+    width: 10vw;
+    min-height: 30px;
+    min-width: 30px;
+    max-height: 250px;
+    max-width: 250px;
+    transform-origin: center;
+    z-index: 10000;
+}
+
+.spinball-dude .body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+    z-index: 2;
+}
+
+.spinball-dude .body .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -5%;
+    width: 0px;
+    height: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid white;
+    z-index: 3;
+}
+
+.spinball-dude .body::after {
+    content: '.';
+    color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -15%;
+    width: 0px;
+    height: 0px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid white;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+    .spinball-dude .body .arrow {
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid white;
+    }
+
+    .spinball-dude .body::after {
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-left: 3px solid white;
+    }
+}
+
+.spinball-dude .arms {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    top: calc(46%);
+    left: 0px;
+    z-index: 1;
+    transform-origin: center;
+    transform: rotate(0deg);
+}
+
+.red .body,
+.red .arms {
+    background: var(--red);
+}
+.red .body::after {
+    border-left-color: var(--red);
+}
+.blue .body,
+.blue .arms {
+    background: var(--blue);
+}
+.blue .body::after {
+    border-left-color: var(--blue);
+}
+.yellow .body,
+.yellow .arms {
+    background: var(--yellow);
+}
+.yellow .body::after {
+    border-left-color: var(--yellow);
+}
+.green .body,
+.green .arms {
+    background: var(--green);
+}
+.green .body::after {
+    border-left-color: var(--green);
+}

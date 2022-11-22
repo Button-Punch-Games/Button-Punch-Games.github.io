@@ -1,5 +1,148 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    Button Punch Games website coming soon
+  <head>
+    <title>Button Punch Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/button-guy-black.png" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/bpg.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="stylesheets/spinball-dude.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous|Audiowide"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <script>
+      function updateYear() {
+        const year = new Date().getFullYear();
+        document.getElementById("year").innerHTML = year;
+      }
+    </script>
+  </head>
+
+  <body onload="updateYear()">
+    <div id="header">
+      <a href="https://twitter.com/buttonpunch" class="twitter" target="_blank">
+        <span class="social-icon"><i class="fab fa-twitter"></i></span>
+      </a>
+      <a
+        href="https://facebook.com/ButtonPunch"
+        class="facebook"
+        target="_blank"
+      >
+        <span class="social-icon"><i class="fab fa-facebook"></i></span>
+      </a>
+    </div>
+    <div>
+      <div class="spinball-dude red">
+        <div class="body">
+          <div class="arrow"></div>
+        </div>
+        <div class="arms"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main-title">
+        <img src="spinball/img/spinball-logo-white.png" />
+        SPINBALL
+      </div>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/PConwXTm_T8?rel=0&autoplay=1&mute=1"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div class="text">
+        Spinball is a <span class="emphasis">fast</span>,
+        <span class="emphasis">fun</span>, and
+        <span class="emphasis">competitive multi-player sport game</span> with
+        non-stop scoring action. Rack up the points as you
+        <span class="emphasis">spin your paddles</span> to smack the ball
+        towards the goal, and try not to accidentally score against your own
+        team!
+      </div>
+
+      <div class="text callout callout--white">Available now!</div>
+      <div class="row stores">
+        <a
+          class="button-link"
+          href="https://store.steampowered.com/app/943920/Spinball/"
+          target="_blank"
+        >
+          <div class="button">
+            <div>STEAM</div>
+            <div class="content social-icon"><i class="fab fa-steam"></i></div>
+          </div>
+        </a>
+        <a
+          class="button-link"
+          href="https://buttonpunchgames.itch.io/spinball"
+          target="_blank"
+        >
+          <div class="button">
+            <div>ITCH.IO</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="section">
+        <div class="header">features</div>
+        <ul>
+          <li>
+            <i class="fas fa-users"></i> Local multiplayer up to 4 players
+          </li>
+          <li><i class="fas fa-th"></i> Nine different arenas</li>
+          <li><i class="fas fa-user"></i> Single player challenge mode</li>
+          <li><i class="fas fa-gamepad"></i> Full Controller Support</li>
+          <li><i class="fas fa-keyboard"></i> Keyboard Support</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="header">How to play</div>
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/gqBoMt7bawQ"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="header">Put your own spin on it</div>
+        <div class="row screenshots">
+          <img src="assets/images/select-profile2.gif" />
+          <img src="assets/images/change-paddles2.gif" />
+          <img src="assets/images/change-icon2.gif" />
+          <img src="assets/images/game-settings2.gif" />
+        </div>
+      </div>
+
+      <div class="logo">
+        <img src="assets/images/button-guy-white.png" />
+        <div>Button Punch Games</div>
+        <div class="copyright">&copy; 2018-<span id="year"></span></div>
+      </div>
+      <script src="spinball-dude.js"></script>
+
+      <div class="chadminton">
+        Check out our real-life sport creation,
+        <a href="http://chadminton.net/">Chadminton</a>!
+      </div>
+    </div>
   </body>
 </html>

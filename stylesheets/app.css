@@ -1,0 +1,358 @@
+body {
+  font-family: "Righteous";
+  background: #1a1a1a;
+  margin: 0px;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dd0000;
+}
+
+#header {
+  position: absolute;
+  right: 5vw;
+  top: 10px;
+}
+
+#header > * {
+  padding-left: 30px;
+}
+
+a.twitter:hover {
+  color: #38A1F3;
+}
+
+a.facebook:hover {
+  color: #4267b2;
+}
+
+.container-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0px;
+  margin: auto;
+  background: #1a1a1a;
+}
+@media only screen and (min-width: 720px) {
+  .container {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+}
+
+.section--full-page {
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section--narrow {
+  width: 80%;
+  height: 50vh;
+  min-height: 50vh;
+}
+
+.section__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 0px;
+  font-size: 4em;
+  color: #ffffff;
+  height: 30%;
+}
+@media only screen and (min-width: 720px) {
+  .section__header {
+    font-size: 7em;
+  }
+}
+
+.section__content {
+  box-sizing: border-box;
+  height: 70%;
+}
+
+.main-title {
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: calc(20vw);
+  color: #ffffff;
+  opacity: 0;
+  font-weight: 50;
+}
+@media only screen and (min-width: 720px) {
+  .main-title {
+    font-size: 6.5em;
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  width: 60vw;
+  height: calc(9/16 * 70vw);
+}
+.video-wrapper iframe {
+  width: 100%;
+}
+
+#description {
+  position: relative;
+}
+
+.text {
+  color: #b4b4b4;
+  font-size: 20px;
+  text-align: center;
+  max-width: 55vw;
+}
+@media only screen and (min-width: 1024px) {
+  .text {
+    font-size: 30px;
+  }
+}
+
+video {
+  outline: none;
+}
+
+.emphasis {
+  color: white;
+}
+
+.callout {
+  text-emphasis: bold;
+  font-size: 2em;
+}
+
+.callout--white {
+  color: #ffffff;
+}
+
+.logo {
+  font-family: "Audiowide";
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 18pt;
+}
+
+.logo > img {
+  width: 80px;
+  margin-top: 20px;
+}
+
+#footer {
+  position: relative;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+#footer > a:first-child {
+  margin-right: 10px;
+}
+
+.slide-up div:nth-child(1) {
+  -webkit-transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
+}
+.slide-up div:nth-child(2) {
+  -webkit-transform: translateY(15%);
+  -ms-transform: translateY(15%);
+  transform: translateY(15%);
+}
+.slide-up div {
+  animation-name: slide-up;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+.slide-right--delay {
+  animation-name: slide-right;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0px, 100px);
+    -ms-transform: translate(0px, 100px);
+    transform: translate(0px, 100px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+  }
+}
+
+.screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.screenshots > img {
+  width: 600px;
+  margin-bottom: 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row > *:not(:last-child) {
+  margin-right: 15px;
+}
+/* General purpose css classes */
+.button {
+  position: relative;
+  height: 60px;
+  width: 300px;
+  background: #272C36;
+  border: solid 2px #080808;
+  border-bottom: solid 3px #080808;
+  border-right: solid 3px #080808;
+  color: white;
+  cursor: pointer;
+  font-size: 24pt;
+  transition: 400ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button > *:not(:last-child) {
+  margin-right: 15px;
+}
+
+.button:hover::after {
+  content: '.';
+  cursor: pointer;
+  color: transparent;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  border: thin #005bff   solid; 
+  animation-name: button-selected;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes button-selected {
+  0% { padding: 0px; }
+  50% { padding: 10px; }
+  100% { padding: 0px; }
+}
+
+.social-icon {
+  font-size: 32px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.regular-text {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 10px;
+}
+.regular-text.bigger {
+  font-size: 28px;
+}
+
+input[type=text] {
+  border-style: solid;
+  border: none;
+  box-sizing: border-box;
+  height: 40px;
+  width: 300px;
+  padding: 4px;
+  font-size: 24px;
+  font: inherit;
+  background: #dedede;
+  transition: 80ms all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+input[type=text]:focus {
+  outline: blue;
+  background: white;
+}
+
+.space-around {
+  margin: 100px 10px 100px 10px;
+}
+
+.slide-in {
+  animation-name: slide-in;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+/*# sourceMappingURL=app.css.map */
